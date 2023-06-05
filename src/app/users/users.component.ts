@@ -6,11 +6,7 @@ import { ZenturyApiService } from '../zentury-api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   FormControl,
-  FormGroupDirective,
-  NgForm,
   Validators,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
 
 @Component({

@@ -36,7 +36,7 @@
 </mat-form-field>
 <mat-form-field class="width">
   <mat-label>Password</mat-label>
-  <input matInput [(ngModel)]="password" [formControl]="passwordControl">
+  <input matInput [(ngModel)]="password" [formControl]="passwordControl" type="password">
   <mat-error *ngIf="passwordControl.hasError('maxlength')">
     Password is too long!
   </mat-error>

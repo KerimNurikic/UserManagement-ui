@@ -15,6 +15,8 @@ export class ZenturyApiService {
 
   getAllUsersPaginated(usersResource: UserResource): Observable<any> {
     let params = new HttpParams();
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+
     params = params.append('PageIndex', usersResource.PageIndex);
     params = params.append('PageSize', usersResource.PageSize);
     params = params.append('FirstName', usersResource.FirstName);
@@ -22,20 +24,31 @@ export class ZenturyApiService {
     params = params.append('Email', usersResource.Email);
     params = params.append('SortOrder', usersResource.SortOrder);
 
-    return this.http.get<any>(this.zenturyUrl + '/users', { params: params });
+    return this.http.get<any>(this.zenturyUrl + '/users', { params: params, headers: headers });
   }
 
   getAllLoginsPaginated(loginResource: LoginResource): Observable<any> {
     let params = new HttpParams();
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
     params = params.append('PageIndex', loginResource.PageIndex);
     params = params.append('PageSize', loginResource.PageSize);
     params = params.append('Email', loginResource.Email);
     params = params.append('SortOrder', loginResource.SortOrder);
 
-    return this.http.get<any>(this.zenturyUrl + '/logins', { params: params });
+    return this.http.get<any>(this.zenturyUrl + '/logins', { params: params, headers: headers });
+  }
+
+  isUserAuth(): Observable<boolean> {
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+    return this.http.get<any>(this.zenturyUrl + '/isAuth', {headers});
+  }
+
+  signIn(email: string, password: string): Observable<any>{
+    return this.http.post('https://localhost:7073/signin', {email: email, password: password});
   }
 
   addUser(user: User) {
-    return this.http.post(this.zenturyUrl + '/adduser', user);
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+    return this.http.post(this.zenturyUrl + '/adduser', user, {headers});
   }
 }

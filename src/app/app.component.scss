@@ -16,6 +16,7 @@
 .anchor:hover {
   box-shadow: inset 100px 0 0 0 mat-color($primary);
   color: mat-color($accent);
+  cursor: pointer;
 }
 
 div {
