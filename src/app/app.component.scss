@@ -1,0 +1,28 @@
+@import "../app/styles/variables.scss";
+@import "~@angular/material/theming";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.anchor {
+  margin-right: 15px;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 mat-color($primary);
+  color: mat-color($primary);
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.anchor:hover {
+  box-shadow: inset 100px 0 0 0 mat-color($primary);
+  color: mat-color($accent);
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background-color: aqua;
+}

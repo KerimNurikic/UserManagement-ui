@@ -1,0 +1,19 @@
+@import "/src/app/styles/variables.scss";
+@import "~@angular/material/theming";
+
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+.icon-display {
+  transform: scale(2);
+}
+h2 {
+  color: mat-color($primary);
+}
+
+mat-card:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+}

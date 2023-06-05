@@ -1,0 +1,16 @@
+@import "../../app/styles/variables.scss";
+@import "~@angular/material/theming";
+
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+h2 {
+  color: mat-color($primary);
+}
